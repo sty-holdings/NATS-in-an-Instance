@@ -1,0 +1,26 @@
+#listen: localhost:4222 # This will only allow access on the local host machine
+listen: 0.0.0.0:4222    # This will allow access from anywhere on the internet
+server_name: $GC_INSTANCE_NAME
+
+include 'includes/$NATS_RESOLVER' # This is relative to the location of this file
+
+tls: {
+    cert_file: "${NATS_MP}/.certs/${CERT_NAME}"
+    key_file:  "${NATS_MP}/.keys/${KEY_NAME}"
+    ca_file:   "${NATS_MP}/.certs/${CA_NAME}"
+    verify: true
+    timeout: 2
+    }
+
+websocket {
+    port: ${NATS_WEBSOCKET_PORT}
+    tls: {
+        cert_file: "${NATS_MP}/.certs/${CERT_NAME}"
+        key_file:  "${NATS_MP}/.keys/${KEY_NAME}"
+        ca_file:   "${NATS_MP}/.certs/${CA_NAME}"
+        verify: false
+        timeout: 2
+    }
+#    no_tls: true
+    compression: true
+    }

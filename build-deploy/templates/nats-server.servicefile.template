@@ -1,0 +1,17 @@
+[Unit]
+Description=NATS message Service
+After=network.target
+StartLimitIntervalSec=10
+StartLimitBurst=1
+
+[Service]
+Type=exec
+Restart=always
+RestartSec=5
+User=scott_yacko_sty_holdings_com
+
+ExecStart=nats-server -c ${NATS_MP}/${NATS_CONF_NAME}
+ExecStop=nats-server -sl term
+
+[Install]
+WantedBy=default.target

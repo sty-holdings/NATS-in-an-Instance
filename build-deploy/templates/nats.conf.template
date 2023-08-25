@@ -1,0 +1,11 @@
+#listen: localhost:4222 # This will only allow access on the local host machine
+listen: 0.0.0.0:4222    # This will allow access from anywhere on the internet
+server_name: $GC_INSTANCE_NAME
+
+include 'includes/$NATS_RESOLVER' # This is relative to the location of this file
+
+websocket {
+    port: ${NATS_WEBSOCKET_PORT}
+    no_tls: true
+    compression: true
+    }

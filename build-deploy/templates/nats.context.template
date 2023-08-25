@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "url": "${NATS_URL}",
+  "token": "",
+  "user": "",
+  "password": "",
+  "creds": "${INSTALL_DIRECTORY}/.local/share/nats/nsc/keys/creds/${NATS_OPERATOR}/${NATS_ACCOUNT}/${NATS_USER}.creds",
+  "nkey": "",
+  "cert": "",
+  "key": "",
+  "ca": "",
+  "nsc": "nsc://${NATS_OPERATOR}/${NATS_ACCOUNT}/${NATS_USER}",
+  "jetstream_domain": "",
+  "jetstream_api_prefix": "",
+  "jetstream_event_prefix": "",
+  "inbox_prefix": "",
+  "user_jwt": ""
+}
