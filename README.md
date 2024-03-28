@@ -1,4 +1,4 @@
-## SavUp NATS project
+## NATS in a Instance
 
 Usage: setup-nats.sh -h | -d -e {environment}-o {operator name} -a {account name} -n {user name} -s {server name} -m {remote NATS mount point} -p {port number} -t {directory for certs/keys}
 
